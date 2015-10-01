@@ -47,6 +47,17 @@ class ProjectListView(ListView):
     model = Project
     template_name = "site/project_list.html"
 
+    def get_queryset(self):
+        projects = []
+        user_tickets = set(self.request.user.tickets.all())
+
+        for project in Project.objects.all():
+            if user_tickets.intersection(project.tickets.all()):
+                projects.insert(0, project)
+            else:
+                projects.append(project)
+
+        return projects
 
 project_list_view = ProjectListView.as_view()
 

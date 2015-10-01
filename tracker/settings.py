@@ -137,7 +137,7 @@ if DEBUG:
     CSP_STYLE_SRC = ("'self'", "'unsafe-inline'")
     CSP_IMG_SRC += ("*.placehold.it",)
 
-CRISPY_TEMPLATE_PACK = 'foundation-5'
+CRISPY_TEMPLATE_PACK = 'bootstrap'
 
 AUTH_USER_MODEL = 'djangae.GaeUser'
 

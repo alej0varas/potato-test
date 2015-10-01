@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="large-12 large-centered columns">
+  <h3>Are you sure you want to delete this ticket?</h3>
+  <h5>{{ ticket.project.title }}: {{ ticket.title }}</h5>
+  <hr>
+  <p>{{ ticket.description|truncatechars:500 }}</p>
+  <small>Last updated: {{ ticket.modified }}</small>
+</div>
+<hr>
+<div class="large-12 large-centered columns">
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" name="submit" value="Delete" class="submit button" id="submit-id-submit">
+  </form>
+</div>
+{% endblock %}

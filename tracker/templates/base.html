@@ -94,5 +94,9 @@
 			{% else %}
 			<script src="{{ STATIC_URL }}js/app.built.js"></script>
 			{% endif %}
+
+			{% block custom_js %}
+			{% endblock %}
+
 		</body>
 		</html>
